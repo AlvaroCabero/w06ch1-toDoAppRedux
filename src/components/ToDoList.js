@@ -18,9 +18,9 @@ const ToDoList = () => {
 
   return (
     <ul>
-      {toDos.map((toDo) => {
-        <ToDo key={toDo.id} name={toDo.name} />;
-      })}
+      {toDos.map((toDo) => (
+        <ToDo key={toDo.id} name={toDo.name} />
+      ))}
     </ul>
   );
 };

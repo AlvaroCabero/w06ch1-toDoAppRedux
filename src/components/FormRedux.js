@@ -21,7 +21,7 @@ const FormRedux = () => {
             // value={gentlemanData.picture}
             // onChange={changeData}
           />
-          <label htmlFor="alternativeText">state</label>
+          <label htmlFor="alternativeText">Description</label>
           <input
             type="text"
             id="alternativeText"
