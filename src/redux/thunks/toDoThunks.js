@@ -1,9 +1,15 @@
-export const loadToDosThunk = () =>{
-return async=(dispatch)=>{
-	const response = await fetch ("urlAPI");
-	const toDos= await response.json()
-	dispatch(loadToDosAction(toDos);
-}}
+import { loadToDosAction } from "../actions/actionCreator";
+
+export const loadToDosThunk = () => {
+  return async (dispatch) => {
+    const response = await fetch(
+      "https://todoredux-api-alvaro-cabero.herokuapp.com/todos"
+    );
+    const toDos = await response.json();
+    dispatch(loadToDosAction(toDos));
+  };
+};
+
 // {
 // export const editArticlesThink = (id) =>
 // async=(dispatch)=>{
@@ -14,13 +20,13 @@ return async=(dispatch)=>{
 // 	dispatch(loadArticlesAction(articles);
 
 //  export const create artcilethink =(arcitle =>> async (dispatch)=>{
-// 	const response =await 
+// 	const response =await
 // }
 
 // export const loadCurrentArticleThunk=(id)=> async (dispatch)=>{
 // 	const response=await fetch(urlapi(id));
 // 	const article = await response.json();
-// dispatch(loadCurrentArticleAction(article));	
+// dispatch(loadCurrentArticleAction(article));
 
 // export const upadateArticleThunk=(article)=> async (dispatch)=>{
 // 	const response=await fetch(urlapi(article.id));
