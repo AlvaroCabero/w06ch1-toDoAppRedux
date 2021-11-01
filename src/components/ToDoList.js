@@ -1,5 +1,6 @@
 import ToDo from "./ToDo";
 import { useEffect } from "react";
+import useToDos from "../redux/hooks/useToDos";
 
 const ToDoList = () => {
   const { toDos, loadToDos } = useToDos();
@@ -17,9 +18,9 @@ const ToDoList = () => {
 
   return (
     <ul>
-      {toDos.map((toDo) => {
-        <ToDo key={toDo.id} name={toDo.name} />;
-      })}
+      {toDos.map((toDo) => (
+        <ToDo key={toDo.id} name={toDo.name} />
+      ))}
     </ul>
   );
 };
