@@ -3,17 +3,17 @@ import { ListGroup } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 
-const ToDo = (toDo) => {
+const ToDo = ({ toDo, onDelete }) => {
   return (
     <>
       <ListGroup defaultActiveKey="#link1">
         <ListGroup.Item action href="#link1">
-          {toDo.todo.name}
+          {toDo.name}
         </ListGroup.Item>
         <ListGroup.Item action href="#link2">
-          {toDo.todo.description}
+          {toDo.description}
         </ListGroup.Item>
-        <ListGroup.Item action variant="warning">
+        <ListGroup.Item action variant="warning" onClick={onDelete}>
           Delete
         </ListGroup.Item>
       </ListGroup>

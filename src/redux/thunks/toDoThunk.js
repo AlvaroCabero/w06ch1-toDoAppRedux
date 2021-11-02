@@ -1,4 +1,8 @@
-import { createToDoAction, loadToDosAction } from "../actions/actionCreator";
+import {
+  createToDoAction,
+  deleteToDoAction,
+  loadToDosAction,
+} from "../actions/actionCreator";
 
 export const loadToDosThunk = () => {
   return async (dispatch) => {
@@ -30,7 +34,7 @@ export const createToDoThunk = (toDo) => {
 export const deleteToDoThunk = (id) => {
   return async (dispatch) => {
     const response = await fetch(
-      "https://todoredux-api-alvaro-cabero.herokuapp.com/todos",
+      `"https://todoredux-api-alvaro-cabero.herokuapp.com/todos/"${id}`,
       {
         method: "DELETE",
       }
