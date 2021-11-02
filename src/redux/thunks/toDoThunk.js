@@ -27,6 +27,20 @@ export const createToDoThunk = (toDo) => {
   };
 };
 
+export const deleteToDoThunk = (id) => {
+  return async (dispatch) => {
+    const response = await fetch(
+      "https://todoredux-api-alvaro-cabero.herokuapp.com/todos",
+      {
+        method: "DELETE",
+      }
+    );
+    await response.json();
+    if (response.ok) {
+      dispatch(deleteToDoAction(id));
+    }
+  };
+};
 // {
 // export const editArticlesThink = (id) =>
 // async=(dispatch)=>{

@@ -16,10 +16,15 @@ const useToDos = () => {
     dispatch(createToDoThunk());
   }, [dispatch]);
 
+  const deleteToDo = useCallback(() => {
+    dispatch(deleteToDoThunk());
+  }, [dispatch]);
+
   return {
     toDos,
     loadToDos,
     createToDo,
+    deleteToDo,
   };
 };
 
