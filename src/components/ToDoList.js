@@ -19,7 +19,7 @@ const ToDoList = () => {
   return (
     <ul>
       {toDos.map((toDo) => (
-        <ToDo key={toDo.id} name={toDo.name} />
+        <ToDo key={toDo.id} todo={toDo} />
       ))}
     </ul>
   );
