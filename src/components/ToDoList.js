@@ -19,7 +19,10 @@ const ToDoList = () => {
   return (
     <ul>
       {toDos.map((toDo) => (
-        <ToDo key={toDo.id} todo={toDo} />
+        <>
+          <ToDo key={toDo.id} todo={toDo} />
+          <div></div>
+        </>
       ))}
     </ul>
   );

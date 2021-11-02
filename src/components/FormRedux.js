@@ -1,14 +1,51 @@
 import { Stack, Form, Button } from "react-bootstrap";
 import React from "react";
+import { createToDoThunk } from "../redux/thunks/toDoThunk";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const FormRedux = () => {
+  const initialData = {
+    name: "",
+    description: "Default description",
+  };
+  const [toDoData, setToDoData] = useState(initialData);
+  const dispatch = useDispatch();
+
+  const changeToDo = (event) => {
+    const input = event.target;
+    setToDoData({
+      ...toDoData,
+      name: input.value,
+    });
+  };
+
+  const createToDo = (event) => {
+    event.preventDefault();
+
+    dispatch(
+      createToDoThunk({
+        ...toDoData,
+      })
+    );
+
+    setToDoData(initialData);
+  };
+
   return (
-    <Stack gap={3}>
+    <Stack gap={2}>
       <Form.Control
         className="me-auto"
         placeholder="Add your new task here..."
+        onChange={changeToDo}
       />
-      <Button variant="secondary">Submit</Button>
+      <Form.Control
+        className="me-auto"
+        placeholder="Add a description here..."
+      />
+      <Button variant="secondary" onClick={createToDo}>
+        Crear
+      </Button>
     </Stack>
 
     // <>
