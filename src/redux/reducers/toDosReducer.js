@@ -7,6 +7,10 @@ const toDosReducer = (toDos = [], action) => {
     case actionTypes.loadToDos:
       newToDos = [...action.toDos];
       break;
+    case actionTypes.createToDo:
+      newToDos = [...toDos, action.toDo];
+      break;
+
     default:
       break;
   }
