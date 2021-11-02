@@ -1,4 +1,4 @@
-import { loadToDosAction } from "../actions/actionCreator";
+import { createToDoAction, loadToDosAction } from "../actions/actionCreator";
 
 export const loadToDosThunk = () => {
   return async (dispatch) => {
@@ -7,6 +7,23 @@ export const loadToDosThunk = () => {
     );
     const toDos = await response.json();
     dispatch(loadToDosAction(toDos));
+  };
+};
+
+export const createToDoThunk = (toDo) => {
+  return async (dispatch) => {
+    const response = await fetch(
+      "https://todoredux-api-alvaro-cabero.herokuapp.com/todos",
+      {
+        method: "POST",
+        body: JSON.stringify(toDo),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const toDoData = await response.json();
+    dispatch(createToDoAction(toDoData));
   };
 };
 
