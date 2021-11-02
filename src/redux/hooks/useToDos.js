@@ -15,6 +15,7 @@ const useToDos = () => {
   const createToDo = useCallback(() => {
     dispatch(createToDoThunk());
   }, [dispatch]);
+
   return {
     toDos,
     loadToDos,
