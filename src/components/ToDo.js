@@ -5,10 +5,10 @@ const ToDo = (toDo) => {
   return (
     <Container>
       <Row className="justify-content-md-center">
-        <Col md="auto">To Do: {toDo.name}</Col>
+        <Col md="auto">To Do: {toDo.todo.name}</Col>
       </Row>
       <Row>
-        <Col md="auto">Description: {toDo.description}</Col>
+        <Col md="auto">Description: {toDo.todo.description}</Col>
       </Row>
     </Container>
     // <>
