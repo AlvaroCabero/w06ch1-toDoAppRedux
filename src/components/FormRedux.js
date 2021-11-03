@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 const FormRedux = () => {
   const initialData = {
     name: "",
-    description: "Default description",
+    description: "",
   };
   const [toDoData, setToDoData] = useState(initialData);
   const dispatch = useDispatch();

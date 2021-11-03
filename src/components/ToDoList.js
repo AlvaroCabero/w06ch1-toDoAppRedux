@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { deleteToDoThunk } from "../redux/thunks/toDoThunk";
 
 const ToDoList = () => {
-  const { toDos, loadToDos, deleteToDo } = useToDos();
+  const { toDos, loadToDos } = useToDos();
   const dispatch = useDispatch();
 
   //useSelector((store) => store.articles)// ({articles} => articles);
