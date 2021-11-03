@@ -20,9 +20,9 @@ const useToDos = () => {
     dispatch(createToDoThunk());
   }, [dispatch]);
 
-  const deleteToDo = useCallback(() => {
-    dispatch(deleteToDoThunk());
-  }, [dispatch]);
+  const deleteToDo = (id) => {
+    dispatch(deleteToDoThunk(id));
+  };
 
   return {
     toDos,

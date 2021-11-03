@@ -11,6 +11,6 @@ export const createToDoAction = (toDo) => ({
 });
 
 export const deleteToDoAction = (id) => ({
-  type: actionTypes.createToDo,
+  type: actionTypes.deleteToDo,
   id: id,
 });

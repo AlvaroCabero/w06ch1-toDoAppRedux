@@ -34,7 +34,7 @@ export const createToDoThunk = (toDo) => {
 export const deleteToDoThunk = (id) => {
   return async (dispatch) => {
     const response = await fetch(
-      `"https://todoredux-api-alvaro-cabero.herokuapp.com/todos/"${id}`,
+      `https://todoredux-api-alvaro-cabero.herokuapp.com/todos/${id}`,
       {
         method: "DELETE",
       }

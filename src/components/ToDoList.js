@@ -2,11 +2,11 @@ import ToDo from "./ToDo";
 import { useEffect } from "react";
 import useToDos from "../redux/hooks/useToDos";
 import { useDispatch } from "react-redux";
-// import { deleteToDoThunk } from "../redux/thunks/toDoThunk";
+import { deleteToDoThunk } from "../redux/thunks/toDoThunk";
 
 const ToDoList = () => {
   const { toDos, loadToDos, deleteToDo } = useToDos();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   //useSelector((store) => store.articles)// ({articles} => articles);
   //const dispatch = useDispatch ();
@@ -16,7 +16,7 @@ const ToDoList = () => {
   //	dispatch(loadArticlesThunk());
   //},[dispatch]);
   const toDeleteToDo = (id) => {
-    deleteToDo(id);
+    dispatch(deleteToDoThunk(id));
   };
 
   useEffect(() => {
