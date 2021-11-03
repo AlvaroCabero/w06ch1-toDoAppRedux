@@ -10,7 +10,9 @@ const toDosReducer = (toDos = [], action) => {
     case actionTypes.createToDo:
       newToDos = [...toDos, action.toDo];
       break;
-
+    case actionTypes.deleteToDo:
+      newToDos = toDos.filter((toDo) => toDo.id !== action.id);
+      break;
     default:
       break;
   }

@@ -1,7 +1,11 @@
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { createToDoThunk, loadToDosThunk } from "../thunks/toDoThunk";
+import {
+  createToDoThunk,
+  deleteToDoThunk,
+  loadToDosThunk,
+} from "../thunks/toDoThunk";
 
 const useToDos = () => {
   const toDos = useSelector((store) => store.toDos);
@@ -16,10 +20,15 @@ const useToDos = () => {
     dispatch(createToDoThunk());
   }, [dispatch]);
 
+  const deleteToDo = (id) => {
+    dispatch(deleteToDoThunk(id));
+  };
+
   return {
     toDos,
     loadToDos,
     createToDo,
+    deleteToDo,
   };
 };
 
